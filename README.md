@@ -93,10 +93,10 @@ python train.py --config=yolact_base_config --batch_size=8
 `
 
 
-| Image Size | Backbone      | FPS  | box AP  | mask AP  | Weights                                                                                                              |  |
-|:----------:|:-------------:|:----:|:----:|:----:|----------------------------------------------------------------------------------------------------------------------|--------|
-| 550        | Resnet101-FPN  | 30.6 | 31.5 |  29.1 |[yolact_plus_resnet50_54_800000.pth](https://drive.google.com/file/d/1ZPu1YR2UzGHQD0o1rEqy-j5bmEm3lbyP/view?usp=sharing)  | [Mirror](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/EcJAtMiEFlhAnVsDf00yWRIBUC4m8iE9NEEiV05XwtEoGw) |
-| 550        | Resnet101-FPN | 30.6 | 32.1 | 29.6 | [yolact_plus_base_54_800000.pth](https://drive.google.com/file/d/15id0Qq5eqRbkD-N3ZjDZXdCvRyIaHpFB/view?usp=sharing) | [Mirror](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/EVQ62sF0SrJPrl_68onyHF8BpG7c05A8PavV4a849sZgEA)
+| Image Size | Backbone    | Loss  | FPS  | box AP  | mask AP  | Weights                                                                                                              |  |
+|:----------:|:-------------:|:----:|:----:|:----:|:----:|----------------------------------------------------------------------------------------------------------------------|--------|
+| 550        | Resnet101-FPN  | SL1 | 30.6 | 31.5 |  29.1 |[yolact_plus_resnet50_54_800000.pth](https://drive.google.com/file/d/1ZPu1YR2UzGHQD0o1rEqy-j5bmEm3lbyP/view?usp=sharing)  | [Mirror](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/EcJAtMiEFlhAnVsDf00yWRIBUC4m8iE9NEEiV05XwtEoGw) |
+| 550        | Resnet101-FPN | CIoU | 30.6 | 32.1 | 29.6 | [yolact_plus_base_54_800000.pth](https://drive.google.com/file/d/15id0Qq5eqRbkD-N3ZjDZXdCvRyIaHpFB/view?usp=sharing) | [Mirror](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/EVQ62sF0SrJPrl_68onyHF8BpG7c05A8PavV4a849sZgEA)
 
 To evalute the model, put the corresponding weights file in the `./weights` directory and run one of the following commands. The name of each config is everything before the numbers in the file name (e.g., `yolact_base` for `yolact_base_54_800000.pth`).
 ## Quantitative Results on COCO
