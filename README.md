@@ -101,8 +101,6 @@ To evalute the model, put the corresponding weights file in the `./weights` dire
 ## Quantitative Results on COCO
 ```
 # Quantitatively evaluate a trained model on the entire validation set. Make sure you have COCO downloaded as above.
-# This should get 29.92 validation mask mAP last time I checked.
-python eval.py --trained_model=weights/yolact_base_54_800000.pth
 
 # Output a COCOEval json to submit to the website or to use the run_coco_eval.py script.
 # This command will create './results/bbox_detections.json' and './results/mask_detections.json' for detection and instance segmentation respectively.
@@ -115,15 +113,17 @@ python run_coco_eval.py
 python eval.py --trained_model=weights/yolact_base_54_800000.pth --output_coco_json --dataset=coco2017_testdev_dataset
 ```
 ## Qualitative Results on COCO
-```Shell
+```
 # Display qualitative results on COCO. From here on I'll use a confidence threshold of 0.15.
 python eval.py --trained_model=weights/yolact_base_54_800000.pth --score_threshold=0.15 --top_k=15 --display
 ```
-## Benchmarking on COCO
-```Shell
-# Run just the raw model on the first 1k images of the validation set
-python eval.py --trained_model=weights/yolact_base_54_800000.pth --benchmark --max_images=1000
+## Cluster-NMS Using Benchmark on COCO
 ```
+python eval.py --trained_model=weights/yolact_base_54_800000.pth --benchmark
+```
+| Image Size | Backbone  | Loss  | NMS  | FPS  | box AP  | mask AP  |
+|:----:|:-------------:|:-------:|:----:|:----:|:----:|:----:|
+| 550  | Resnet101-FPN | CIoU  | Fast NMS | 30.6 | 31.5 | 29.1 |
 ## Images
 ```Shell
 # Display qualitative results on the specified image.
