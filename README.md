@@ -15,7 +15,11 @@ Complete-IoU (CIoU) Loss and Cluster-NMS for improving Object Detection and Inst
 
 ## Getting Started
 
-### 1) New released! CIoU and Cluster-NMS into YOLACT (See [YOLACT](https://github.com/Zzh-tju/CIoU#YOLACT))
+### 1) New released! CIoU and Cluster-NMS
+
+1. YOLACT (See [YOLACT](https://github.com/Zzh-tju/CIoU#YOLACT))
+
+2. YOLOv3-pytorch [https://github.com/Zzh-tju/ultralytics-yolov3](https://github.com/Zzh-tju/ultralytics-yolov3)
 
 Please take a look at `ciou` function of [layers/modules/multibox_loss.py](layers/modules/multibox_loss.py) for our CIoU loss implementation in PyTorch.
 
