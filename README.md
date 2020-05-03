@@ -1,6 +1,6 @@
 <img src="CIoU.png" width="800px"/>
-# CIoU & Cluster-NMS
-Complete-IoU (CIoU) Loss and Cluster-NMS for Object Detection and Instance Segmentation. This is the code for our papers:
+
+Complete-IoU (CIoU) Loss and Cluster-NMS for improving Object Detection and Instance Segmentation. This is the code for our papers:
  - [Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression](https://arxiv.org/abs/1911.08287)
  - [Enhancing Geometric Factors into Model Learning and Inference for Object Detection and Instance Segmentation](https://arxiv.org/abs/1904.02689)
 
@@ -16,7 +16,7 @@ Complete-IoU (CIoU) Loss and Cluster-NMS for Object Detection and Instance Segme
 ## Getting Started
 
 ### 1) New released! CIoU into YOLACT (See [YOLACT](https://github.com/Zzh-tju/CIoU#YOLACT))
-
+Please take a look at `compute_iou` function of [layers/modules/multibox_loss.py](layers/modules/multibox_loss.py) for our CIoU loss implementation in PyTorch.
 
 ### 2) DIoU and CIoU losses into Detection Algorithms
 DIoU and CIoU losses are incorporated into state-of-the-art detection algorithms, including YOLO v3, SSD and Faster R-CNN. 
@@ -80,15 +80,17 @@ Here are our YOLACT models (released on April 5th, 2019) along with their FPS on
 
 | Image Size | Backbone      | FPS  | mAP  | Weights                                                                                                              |  |
 |:----------:|:-------------:|:----:|:----:|----------------------------------------------------------------------------------------------------------------------|--------|
-| 550        | Resnet50-FPN  | 42.5 | 28.2 | [yolact_resnet50_54_800000.pth](https://drive.google.com/file/d/1yp7ZbbDwvMiFJEq4ptVKTYTI2VeRDXl0/view?usp=sharing)  | [Mirror](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/EUVpxoSXaqNIlssoLKOEoCcB1m0RpzGq_Khp5n1VX3zcUw) |
-| 550        | Darknet53-FPN | 40.0 | 28.7 | [yolact_darknet53_54_800000.pth](https://drive.google.com/file/d/1dukLrTzZQEuhzitGkHaGjphlmRJOjVnP/view?usp=sharing) | [Mirror](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/ERrao26c8llJn25dIyZPhwMBxUp2GdZTKIMUQA3t0djHLw)
+
 | 550        | Resnet101-FPN | 33.5 | 29.8 | [yolact_base_54_800000.pth](https://drive.google.com/file/d/1UYy3dMapbH1BnmtZU4WH1zbYgOzzHHf_/view?usp=sharing)      | [Mirror](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/EYRWxBEoKU9DiblrWx2M89MBGFkVVB_drlRd_v5sdT3Hgg)
 | 700        | Resnet101-FPN | 23.6 | 31.2 | [yolact_im700_54_800000.pth](https://drive.google.com/file/d/1lE4Lz5p25teiXV-6HdTiOJSnS7u7GBzg/view?usp=sharing)     | [Mirror](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/Eagg5RSc5hFEhp7sPtvLNyoBjhlf2feog7t8OQzHKKphjw)
 
-YOLACT++ models (released on December 16th, 2019):
+To evalute the model, put the corresponding weights file in the `./weights` directory and run one of the following commands. The name of each config is everything before the numbers in the file name (e.g., `yolact_base` for `yolact_base_54_800000.pth`).
+## Quantitative Results on COCO
+```Shell
+# Quantitatively evaluate a trained model on the entire validation set. Make sure you have COCO downloaded as above.
+# This should get 29.92 validation mask mAP last time I checked.
+python eval.py --trained_model=weights/yolact_base_54_800000.pth
 
-| Image Size | Backbone      | FPS  | mAP  | Weights                                                                                                              |  |
-|:----------:|:-------------:|:----:|:----:|----------------------------------------------------------------------------------------------------------------------|--------|
-| 550        | Resnet50-FPN  | 33.5 | 34.1 | [yolact_plus_resnet50_54_800000.pth](https://drive.google.com/file/d/1ZPu1YR2UzGHQD0o1rEqy-j5bmEm3lbyP/view?usp=sharing)  | [Mirror](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/EcJAtMiEFlhAnVsDf00yWRIBUC4m8iE9NEEiV05XwtEoGw) |
-| 550        | Resnet101-FPN | 27.3 | 34.6 | [yolact_plus_base_54_800000.pth](https://drive.google.com/file/d/15id0Qq5eqRbkD-N3ZjDZXdCvRyIaHpFB/view?usp=sharing) | [Mirror](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/EVQ62sF0SrJPrl_68onyHF8BpG7c05A8PavV4a849sZgEA)
-
+# Output a COCOEval json to submit to the website or to use the run_coco_eval.py script.
+# This command will create './results/bbox_detections.json' and './results/mask_detections.json' for detection and instance segmentation respectively.
+python eval.py --trained_model=weights/yolact_base_54_800000.pth --output_coco_json
