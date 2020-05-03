@@ -27,7 +27,7 @@ The details of implementation and comparison can be respectively found in the fo
 
 3. Faster R-CNN [https://github.com/Zzh-tju/DIoU-pytorch-detectron](https://github.com/Zzh-tju/DIoU-pytorch-detectron)
 
-#YOLACT
+# YOLACT
 
 # **Y**ou **O**nly **L**ook **A**t **C**oefficien**T**s
 ```
