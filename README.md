@@ -121,9 +121,14 @@ python eval.py --trained_model=weights/yolact_base_54_800000.pth --score_thresho
 ```
 python eval.py --trained_model=weights/yolact_base_54_800000.pth --benchmark
 ```
-| Image Size | Backbone  | Loss  | NMS  | FPS  | box AP | mask AP |
-|:----:|:-------------:|:-------:|:----:|:----:|:----:|:----:|
-| 550  | Resnet101-FPN | CIoU  | Fast NMS | 30.6 | 31.5 | 29.1 |
+| Image Size | Backbone  | Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
+|:----:|:-------------:|:-------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| 550  | Resnet101-FPN | CIoU  |     Fast NMS     | 30.6 | 32.1 | 33.9 | 43.0 | 29.6 | 30.9 | 40.3 |
+| 550  | Resnet101-FPN | CIoU  |   Original NMS   | 11.6 | 32.5 | 34.1 | 45.1 | 29.7 | 31.0 | 41.7 |
+| 550  | Resnet101-FPN | CIoU  |   Cluster-NMS    | 28.8 | 32.5 | 34.1 | 45.2 | 29.7 | 31.0 | 41.7 |
+| 550  | Resnet101-FPN | CIoU  | SPM Cluster-NMS  | 28.6 | 33.1 | 35.2 | 48.8 | 30.3 | 31.7 | 43.6 |
+| 550  | Resnet101-FPN | CIoU  | SPM + Distance Cluster-NMS  | 27.1 | 33.2 | 35.2 | 49.2 | 30.2 | 31.7 | 43.8 |
+
 ## Images
 ```Shell
 # Display qualitative results on the specified image.
