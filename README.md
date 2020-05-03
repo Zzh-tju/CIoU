@@ -92,7 +92,7 @@ The training is carried on two GTX 1080 Ti with command:
 python train.py --config=yolact_base_config --batch_size=8
 `
 
-| Image Size | Backbone  | Loss  | NMS  | FPS  | box AP  | mask AP  | Weights                                                                                                              |  |
+| Image Size | Backbone  | Loss  | NMS  | FPS  | box AP  | mask AP  | Weights   |                                                       
 |:----:|:-------------:|:-------:|:----:|:----:|:----:|:----:|----------------------------------------------------------------------------------------------------------------------|
 | 550  | Resnet101-FPN | SL1  | Fast NMS | 30.6 | 31.5 | 29.1 |[yolact_plus_resnet50_54_800000.pth](https://drive.google.com/file/d/1ZPu1YR2UzGHQD0o1rEqy-j5bmEm3lbyP/view?usp=sharing)  | 
 | 550  | Resnet101-FPN | CIoU | Fast NMS | 30.6 | 32.1 | 29.6 | [yolact_plus_base_54_800000.pth](https://drive.google.com/file/d/15id0Qq5eqRbkD-N3ZjDZXdCvRyIaHpFB/view?usp=sharing) | 
