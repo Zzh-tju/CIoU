@@ -1,6 +1,8 @@
 <img src="CIoU.png" width="800px"/>
 
-Complete-IoU (CIoU) Loss and Cluster-NMS for improving Object Detection and Instance Segmentation. This is the code for our papers:
+## Complete-IoU (CIoU) Loss and Cluster-NMS for improving Object Detection and Instance Segmentation. 
+
+This is the code for our papers:
  - [Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression](https://arxiv.org/abs/1911.08287)
  - [Enhancing Geometric Factors into Model Learning and Inference for Object Detection and Instance Segmentation](https://arxiv.org/abs/1904.02689)
 
@@ -17,9 +19,9 @@ Complete-IoU (CIoU) Loss and Cluster-NMS for improving Object Detection and Inst
 
 ### 1) New released! CIoU and Cluster-NMS
 
-#### 1. YOLACT (See [YOLACT](https://github.com/Zzh-tju/CIoU#YOLACT))
+##### 1. YOLACT (See [YOLACT](https://github.com/Zzh-tju/CIoU#YOLACT))
 
-#### 2. YOLOv3-pytorch [https://github.com/Zzh-tju/ultralytics-yolov3](https://github.com/Zzh-tju/ultralytics-yolov3)
+##### 2. YOLOv3-pytorch [https://github.com/Zzh-tju/ultralytics-yolov3](https://github.com/Zzh-tju/ultralytics-yolov3)
 
 ### 2) DIoU and CIoU losses into Detection Algorithms
 DIoU and CIoU losses are incorporated into state-of-the-art detection algorithms, including YOLO v3, SSD and Faster R-CNN. 
