@@ -121,7 +121,7 @@ python eval.py --trained_model=weights/yolact_base_54_800000.pth --score_thresho
 ```
 python eval.py --trained_model=weights/yolact_base_54_800000.pth --benchmark
 ```
-| Image Size | Backbone  | Loss  | NMS  | FPS  | box AP  | mask AP  |
+| Image Size | Backbone  | Loss  | NMS  | FPS  | box AP | mask AP |
 |:----:|:-------------:|:-------:|:----:|:----:|:----:|:----:|
 | 550  | Resnet101-FPN | CIoU  | Fast NMS | 30.6 | 31.5 | 29.1 |
 ## Images
