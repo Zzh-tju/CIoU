@@ -1,4 +1,4 @@
-<img src="CIoU.png" width="600px"/>
+<img src="CIoU.png" width="800px"/>
 # CIoU & Cluster-NMS
 Complete-IoU (CIoU) Loss and Cluster-NMS for Object Detection and Instance Segmentation. This is the code for our papers:
  - [Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression](https://arxiv.org/abs/1911.08287)
