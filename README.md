@@ -14,7 +14,7 @@ Complete-IoU (CIoU) Loss and Cluster-NMS for Object Detection and Instance Segme
 
 ## Getting Started
 
-### 1) New released! CIoU into YOLACT (See [Installation](https://github.com/Zzh-tju/CIoU#**Y**ou **O**nly **L**ook **A**t **C**oefficien**T**s))
+### 1) New released! CIoU into YOLACT (See [YOLACT](https://github.com/Zzh-tju/CIoU#YOLACT))
 
 
 ### 2) DIoU and CIoU losses into Detection Algorithms
@@ -26,6 +26,8 @@ The details of implementation and comparison can be respectively found in the fo
 2. SSD [https://github.com/Zzh-tju/DIoU-SSD-pytorch](https://github.com/Zzh-tju/DIoU-SSD-pytorch)
 
 3. Faster R-CNN [https://github.com/Zzh-tju/DIoU-pytorch-detectron](https://github.com/Zzh-tju/DIoU-pytorch-detectron)
+
+#YOLACT
 
 # **Y**ou **O**nly **L**ook **A**t **C**oefficien**T**s
 ```
