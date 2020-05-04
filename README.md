@@ -128,7 +128,7 @@ python eval.py --trained_model=weights/yolact_base_54_800000.pth --benchmark
  - Backbone: Resnet101-FPN
 
 | Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
-|:-------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+|:-------:|:---------------------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 | CIoU  |                 Fast NMS               | 30.6 | 32.1 | 33.9 | 43.0 | 29.6 | 30.9 | 40.3 |
 | CIoU  |               Original NMS             | 11.5 | 32.5 | 34.1 | 45.1 | 29.7 | 31.0 | 41.7 |
 | CIoU  |               Cluster-NMS              | 28.8 | 32.5 | 34.1 | 45.2 | 29.7 | 31.0 | 41.7 |
@@ -139,7 +139,7 @@ python eval.py --trained_model=weights/yolact_base_54_800000.pth --benchmark
 The following table is evaluated by using their pretrained weighted of YOLACT. ([yolact_base_54_800000.pth](https://drive.google.com/file/d/1UYy3dMapbH1BnmtZU4WH1zbYgOzzHHf_/view?usp=sharing))
 
 | Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
-|:-------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+|:-------:|:---------------------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
 | SL1  |                 Fast NMS               | 30.6 | 32.5 | 34.6 | 43.9 | 29.8 | 31.3 | 40.8 |
 | SL1  |               Original NMS             | 11.9 | 32.9 | 34.8 | 45.8 | 29.9 | 31.4 | 42.1 |
 | SL1  |               Cluster-NMS              | 29.2 | 32.9 | 34.8 | 45.9 | 29.9 | 31.4 | 42.1 |
