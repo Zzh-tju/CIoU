@@ -174,8 +174,6 @@ As you can tell, `eval.py` can do a ton of stuff. Run the `--help` command to se
 ```Shell
 python eval.py --help
 ```
-
-
 # Training
 By default, we train on COCO. Make sure to download the entire dataset using the commands above.
  - To train, grab an imagenet-pretrained model and put it in `./weights`.
@@ -186,4 +184,26 @@ By default, we train on COCO. Make sure to download the entire dataset using the
    - Note that you can press ctrl+c while training and it will save an `*_interrupt.pth` file at the current iteration.
    - All weights are saved in the `./weights` directory by default with the file name `<config>_<epoch>_<iter>.pth`.
 ```Shell
-# Trains using the 
+# Trains using the base config with a batch size of 8 (the default).
+python train.py --config=yolact_base_config
+
+# Trains yolact_base_config with a batch_size of 5. For the 550px models, 1 batch takes up around 1.5 gigs of VRAM, so specify accordingly.
+python train.py --config=yolact_base_config --batch_size=5
+
+# Resume training yolact_base with a specific weight file and start from the iteration specified in the weight file's name.
+python train.py --config=yolact_base_config --resume=weights/yolact_base_10_32100.pth --start_iter=-1
+
+# Use the help option to see a description of all available command line arguments
+python train.py --help
+```
+
+## Multi-GPU Support
+YOLACT now supports multiple GPUs seamlessly during training:
+
+ - Before running any of the scripts, run: `export CUDA_VISIBLE_DEVICES=[gpus]`
+   - Where you should replace [gpus] with a comma separated list of the index of each GPU you want to use (e.g., 0,1,2,3).
+   - You should still do this if only using 1 GPU.
+   - You can check the indices of your GPUs with `nvidia-smi`.
+ - Then, simply set the batch size to `8*num_gpus` with the training commands above. The training script will automatically scale the hyperparameters to the right values.
+   - If you have memory to spare you can increase the batch size further, but keep it a multiple of the number of GPUs you're using.
+   - If you want to allocate the images per GPU specific for different GPUs, you can use `--batch_alloc=[alloc]` where [alloc] is a comma seprated list containing the number of images on each GPU. This must sum to `batch_size`.
