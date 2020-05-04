@@ -207,3 +207,29 @@ YOLACT now supports multiple GPUs seamlessly during training:
  - Then, simply set the batch size to `8*num_gpus` with the training commands above. The training script will automatically scale the hyperparameters to the right values.
    - If you have memory to spare you can increase the batch size further, but keep it a multiple of the number of GPUs you're using.
    - If you want to allocate the images per GPU specific for different GPUs, you can use `--batch_alloc=[alloc]` where [alloc] is a comma seprated list containing the number of images on each GPU. This must sum to `batch_size`.
+   
+## Acknowledgments
+
+Thank you to [Daniel Bolya](https://github.com/dbolya/) for his fork of [YOLACT & YOLACT++](https://github.com/dbolya/yolact), which is an exellent work for real-time instance segmentation.
+
+For YOLACT, please cite
+```
+@inproceedings{yolact-iccv2019,
+  author    = {Daniel Bolya and Chong Zhou and Fanyi Xiao and Yong Jae Lee},
+  title     = {YOLACT: {Real-time} Instance Segmentation},
+  booktitle = {ICCV},
+  year      = {2019},
+}
+```
+
+For YOLACT++, please cite
+```
+@misc{yolact-plus-arxiv2019,
+  title         = {YOLACT++: Better Real-time Instance Segmentation},
+  author        = {Daniel Bolya and Chong Zhou and Fanyi Xiao and Yong Jae Lee},
+  year          = {2019},
+  eprint        = {1912.06218},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV}
+}
+```
