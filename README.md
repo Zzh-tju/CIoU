@@ -121,32 +121,30 @@ python eval.py --trained_model=weights/yolact_base_54_800000.pth --score_thresho
 ```
 python eval.py --trained_model=weights/yolact_base_54_800000.pth --benchmark
 ```
-### Hardware and main parameters
+#### Hardware
  - 1 GTX 1080 Ti
  - Intel(R) Core(TM) i7-6850K CPU @ 3.60GHz
- - Image Size: 550
- - Backbone: Resnet101-FPN
 
-| Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
-|:-------:|:------------------------------------------------------------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| CIoU  |                 Fast NMS               | 30.6 | 32.1 | 33.9 | 43.0 | 29.6 | 30.9 | 40.3 |
-| CIoU  |               Original NMS             | 11.5 | 32.5 | 34.1 | 45.1 | 29.7 | 31.0 | 41.7 |
-| CIoU  |               Cluster-NMS              | 28.8 | 32.5 | 34.1 | 45.2 | 29.7 | 31.0 | 41.7 |
-| CIoU  |             SPM Cluster-NMS            | 28.6 | 33.1 | 35.2 | 48.8 | 30.3 | 31.7 | 43.6 |
-| CIoU  |       SPM + Distance Cluster-NMS       | 27.1 | 33.2 | 35.2 | 49.2 | 30.2 | 31.7 | 43.8 |
-| CIoU  | SPM + Distance + Weighted Cluster-NMS  | 26.5 | 33.4 | 35.5 | 49.1 | 30.3 | 31.6 | 43.8 |
+| Image Size | Backbone  | Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
+|:----:|:-------------:|:-------:|:------------------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| 550  | Resnet101-FPN | CIoU  |                 Fast NMS               | 30.6 | 32.1 | 33.9 | 43.0 | 29.6 | 30.9 | 40.3 |
+| 550  | Resnet101-FPN | CIoU  |               Original NMS             | 11.5 | 32.5 | 34.1 | 45.1 | 29.7 | 31.0 | 41.7 |
+| 550  | Resnet101-FPN | CIoU  |               Cluster-NMS              | 28.8 | 32.5 | 34.1 | 45.2 | 29.7 | 31.0 | 41.7 |
+| 550  | Resnet101-FPN | CIoU  |             SPM Cluster-NMS            | 28.6 | 33.1 | 35.2 | 48.8 | 30.3 | 31.7 | 43.6 |
+| 550  | Resnet101-FPN | CIoU  |       SPM + Distance Cluster-NMS       | 27.1 | 33.2 | 35.2 | 49.2 | 30.2 | 31.7 | 43.8 |
+| 550  | Resnet101-FPN | CIoU  | SPM + Distance + Weighted Cluster-NMS  | 26.5 | 33.4 | 35.5 | 49.1 | 30.3 | 31.6 | 43.8 |
 
 The following table is evaluated by using their pretrained weighted of YOLACT. ([yolact_base_54_800000.pth](https://drive.google.com/file/d/1UYy3dMapbH1BnmtZU4WH1zbYgOzzHHf_/view?usp=sharing))
 
-| Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
-|:-------:|:------------------------------------------------------------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| SL1  |                 Fast NMS               | 30.6 | 32.5 | 34.6 | 43.9 | 29.8 | 31.3 | 40.8 |
-| SL1  |               Original NMS             | 11.9 | 32.9 | 34.8 | 45.8 | 29.9 | 31.4 | 42.1 |
-| SL1  |               Cluster-NMS              | 29.2 | 32.9 | 34.8 | 45.9 | 29.9 | 31.4 | 42.1 |
-| SL1  |             SPM Cluster-NMS            | 28.8 | 33.5 | 35.9 | 49.7 | 30.5 | 32.1 | 44.1 |
-| SL1  |       SPM + Distance Cluster-NMS       | 27.5 | 33.5 | 35.9 | 50.2 | 30.4 | 32.0 | 44.3 |
-| SL1  | SPM + Distance + Weighted Cluster-NMS  | 26.7 | 34.0 | 36.6 | 49.9 | 30.5 | 32.0 | 44.3 |
-##### Note:
+| Image Size | Backbone  | Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
+|:----:|:-------------:|:-------:|:-----------------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| 550  | Resnet101-FPN | SL1  |                 Fast NMS               | 30.6 | 32.5 | 34.6 | 43.9 | 29.8 | 31.3 | 40.8 |
+| 550  | Resnet101-FPN | SL1  |               Original NMS             | 11.9 | 32.9 | 34.8 | 45.8 | 29.9 | 31.4 | 42.1 |
+| 550  | Resnet101-FPN | SL1  |               Cluster-NMS              | 29.2 | 32.9 | 34.8 | 45.9 | 29.9 | 31.4 | 42.1 |
+| 550  | Resnet101-FPN | SL1  |             SPM Cluster-NMS            | 28.8 | 33.5 | 35.9 | 49.7 | 30.5 | 32.1 | 44.1 |
+| 550  | Resnet101-FPN | SL1  |       SPM + Distance Cluster-NMS       | 27.5 | 33.5 | 35.9 | 50.2 | 30.4 | 32.0 | 44.3 |
+| 550  | Resnet101-FPN | SL1  | SPM + Distance + Weighted Cluster-NMS  | 26.7 | 34.0 | 36.6 | 49.9 | 30.5 | 32.0 | 44.3 |
+#### Note:
  - Things we did but did not appear in the paper: SPM + Distance + Weighted Cluster-NMS. Here the box coordinate weighted average is only performed in `IoU> 0.8`. (We searched that `IoU>0.5` is not good for YOLACT and `IoU>0.9` is almost same to `SPM + Distance Cluster-NMS`.)
  - The Original NMS impremented by YOLACT is faster than ours, because they firstly use a score threshold (0.05) to get the set of candidate boxes, then do NMS will be faster (22 ~ 23 FPS with a slight performance drop). In order to get the same result with our Cluster-NMS, we modify the process of Original NMS.
 ## Images
@@ -188,26 +186,4 @@ By default, we train on COCO. Make sure to download the entire dataset using the
    - Note that you can press ctrl+c while training and it will save an `*_interrupt.pth` file at the current iteration.
    - All weights are saved in the `./weights` directory by default with the file name `<config>_<epoch>_<iter>.pth`.
 ```Shell
-# Trains using the base config with a batch size of 8 (the default).
-python train.py --config=yolact_base_config
-
-# Trains yolact_base_config with a batch_size of 5. For the 550px models, 1 batch takes up around 1.5 gigs of VRAM, so specify accordingly.
-python train.py --config=yolact_base_config --batch_size=5
-
-# Resume training yolact_base with a specific weight file and start from the iteration specified in the weight file's name.
-python train.py --config=yolact_base_config --resume=weights/yolact_base_10_32100.pth --start_iter=-1
-
-# Use the help option to see a description of all available command line arguments
-python train.py --help
-```
-
-## Multi-GPU Support
-YOLACT now supports multiple GPUs seamlessly during training:
-
- - Before running any of the scripts, run: `export CUDA_VISIBLE_DEVICES=[gpus]`
-   - Where you should replace [gpus] with a comma separated list of the index of each GPU you want to use (e.g., 0,1,2,3).
-   - You should still do this if only using 1 GPU.
-   - You can check the indices of your GPUs with `nvidia-smi`.
- - Then, simply set the batch size to `8*num_gpus` with the training commands above. The training script will automatically scale the hyperparameters to the right values.
-   - If you have memory to spare you can increase the batch size further, but keep it a multiple of the number of GPUs you're using.
-   - If you want to allocate the images per GPU specific for different GPUs, you can use `--batch_alloc=[alloc]` where [alloc] is a comma seprated list containing the number of images on each GPU. This must sum to `batch_size`.
+# Trains using the 
