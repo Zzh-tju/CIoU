@@ -123,12 +123,24 @@ python eval.py --trained_model=weights/yolact_base_54_800000.pth --benchmark
 ```
 | Image Size | Backbone  | Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
 |:----:|:-------------:|:-------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| 550  | Resnet101-FPN | CIoU  |     Fast NMS     | 30.6 | 32.1 | 33.9 | 43.0 | 29.6 | 30.9 | 40.3 |
-| 550  | Resnet101-FPN | CIoU  |   Original NMS   | 11.6 | 32.5 | 34.1 | 45.1 | 29.7 | 31.0 | 41.7 |
-| 550  | Resnet101-FPN | CIoU  |   Cluster-NMS    | 28.8 | 32.5 | 34.1 | 45.2 | 29.7 | 31.0 | 41.7 |
-| 550  | Resnet101-FPN | CIoU  | SPM Cluster-NMS  | 28.6 | 33.1 | 35.2 | 48.8 | 30.3 | 31.7 | 43.6 |
-| 550  | Resnet101-FPN | CIoU  | SPM + Distance Cluster-NMS  | 27.1 | 33.2 | 35.2 | 49.2 | 30.2 | 31.7 | 43.8 |
+| 550  | Resnet101-FPN | CIoU  |                 Fast NMS               | 30.6 | 32.1 | 33.9 | 43.0 | 29.6 | 30.9 | 40.3 |
+| 550  | Resnet101-FPN | CIoU  |               Original NMS             | 11.6 | 32.5 | 34.1 | 45.1 | 29.7 | 31.0 | 41.7 |
+| 550  | Resnet101-FPN | CIoU  |               Cluster-NMS              | 28.8 | 32.5 | 34.1 | 45.2 | 29.7 | 31.0 | 41.7 |
+| 550  | Resnet101-FPN | CIoU  |             SPM Cluster-NMS            | 28.6 | 33.1 | 35.2 | 48.8 | 30.3 | 31.7 | 43.6 |
+| 550  | Resnet101-FPN | CIoU  |       SPM + Distance Cluster-NMS       | 27.1 | 33.2 | 35.2 | 49.2 | 30.2 | 31.7 | 43.8 |
+| 550  | Resnet101-FPN | CIoU  | SPM + Distance + Weighted Cluster-NMS  | 26.5 | 33.4 | 35.5 | 49.1 | 30.3 | 31.6 | 43.8 |
 
+The following table is evaluated by using their pretrained weighted of YOLACT. ([yolact_base_54_800000.pth](https://drive.google.com/file/d/1UYy3dMapbH1BnmtZU4WH1zbYgOzzHHf_/view?usp=sharing)
+
+| Image Size | Backbone  | Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
+|:----:|:-------------:|:-------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| 550  | Resnet101-FPN | SL1  |                 Fast NMS               | 30.6 | 32.1 | 33.9 | 43.0 | 29.6 | 30.9 | 40.3 |
+| 550  | Resnet101-FPN | SL1  |               Original NMS             | 11.6 | 32.5 | 34.1 | 45.1 | 29.7 | 31.0 | 41.7 |
+| 550  | Resnet101-FPN | SL1  |               Cluster-NMS              | 28.8 | 32.5 | 34.1 | 45.2 | 29.7 | 31.0 | 41.7 |
+| 550  | Resnet101-FPN | SL1  |             SPM Cluster-NMS            | 28.6 | 33.1 | 35.2 | 48.8 | 30.3 | 31.7 | 43.6 |
+| 550  | Resnet101-FPN | SL1  |       SPM + Distance Cluster-NMS       | 27.1 | 33.2 | 35.2 | 49.2 | 30.2 | 31.7 | 43.8 |
+| 550  | Resnet101-FPN | SL1  | SPM + Distance + Weighted Cluster-NMS  | 26.5 | 33.4 | 35.5 | 49.1 | 30.3 | 31.6 | 43.8 |
+ - Things we did but did not appear in the paper: SPM + Distance + Weighted Cluster-NMS. Here the box coordinate weighted average is only performed in `IoU> 0.8`. (We searched that `IoU>0.5` is not good for YOLACT and `IoU>0.9` is almost same to `SPM + Distance Cluster-NMS`.)
 ## Images
 ```Shell
 # Display qualitative results on the specified image.
