@@ -144,6 +144,17 @@ The following table is evaluated by using their pretrained weighted of YOLACT. (
 | 550  | Resnet101-FPN | SL1  |             SPM Cluster-NMS            | 28.8 | 33.5 | 35.9 | 49.7 | 30.5 | 32.1 | 44.1 |
 | 550  | Resnet101-FPN | SL1  |       SPM + Distance Cluster-NMS       | 27.5 | 33.5 | 35.9 | 50.2 | 30.4 | 32.0 | 44.3 |
 | 550  | Resnet101-FPN | SL1  | SPM + Distance + Weighted Cluster-NMS  | 26.7 | 34.0 | 36.6 | 49.9 | 30.5 | 32.0 | 44.3 |
+
+The following table is evaluated by using their pretrained weighted of YOLACT++. ([yolact_plus_base_54_800000.pth](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/EVQ62sF0SrJPrl_68onyHF8BpG7c05A8PavV4a849sZgEA))
+
+| Image Size | Backbone  | Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
+|:----:|:-------------:|:-------:|:-----------------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| 550  | Resnet101-FPN | SL1  |                 Fast NMS               | 30.6 | 32.5 | 34.6 | 43.9 | 29.8 | 31.3 | 40.8 |
+| 550  | Resnet101-FPN | SL1  |               Original NMS             | 11.9 | 32.9 | 34.8 | 45.8 | 29.9 | 31.4 | 42.1 |
+| 550  | Resnet101-FPN | SL1  |               Cluster-NMS              | 29.2 | 32.9 | 34.8 | 45.9 | 29.9 | 31.4 | 42.1 |
+| 550  | Resnet101-FPN | SL1  |             SPM Cluster-NMS            | 28.8 | 36.9 | 40.1 | 52.8 | 35.0 | 37.5 | 46.3 |
+| 550  | Resnet101-FPN | SL1  |       SPM + Distance Cluster-NMS       | 22.0 | 36.9 | 40.2 | 53.0 | 34.9 | 37.5 | 46.3 |
+| 550  | Resnet101-FPN | SL1  | SPM + Distance + Weighted Cluster-NMS  | 26.7 | 34.0 | 36.6 | 49.9 | 30.5 | 32.0 | 44.3 |
 #### Note:
  - Things we did but did not appear in the paper: SPM + Distance + Weighted Cluster-NMS. Here the box coordinate weighted average is only performed in `IoU> 0.8`. (We searched that `IoU>0.5` is not good for YOLACT and `IoU>0.9` is almost same to `SPM + Distance Cluster-NMS`.)
  - The Original NMS impremented by YOLACT is faster than ours, because they firstly use a score threshold (0.05) to get the set of candidate boxes, then do NMS will be faster (22 ~ 23 FPS with a slight performance drop). In order to get the same result with our Cluster-NMS, we modify the process of Original NMS.
