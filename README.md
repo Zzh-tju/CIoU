@@ -138,12 +138,12 @@ The following table is evaluated by using their pretrained weighted of YOLACT. (
 
 | Image Size | Backbone  | Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
 |:----:|:-------------:|:-------:|:-----------------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| 550  | Resnet50-FPN | SL1  |                 Fast NMS               | 30.6 | 32.5 | 34.6 | 43.9 | 29.8 | 31.3 | 40.8 |
-| 550  | Resnet50-FPN | SL1  |               Original NMS             | 11.9 | 30.7 | 32.0 | 44.1 | 28.1 | 29.2 | 40.7 |
+| 550  | Resnet50-FPN | SL1  |                 Fast NMS               | 41.6 | 30.2 | 31.9 | 42.0 | 28.0 | 29.1 | 39.4 |
+| 550  | Resnet50-FPN | SL1  |               Original NMS             | 12.8| 30.7 | 32.0 | 44.1 | 28.1 | 29.2 | 40.7 |
 | 550  | Resnet50-FPN | SL1  |               Cluster-NMS              | 38.2 | 30.7 | 32.0 | 44.1 | 28.1 | 29.2 | 40.7 |
 | 550  | Resnet50-FPN | SL1  |             SPM Cluster-NMS            | 37.7 | 31.3 | 33.2 | 48.0 | 28.8 | 29.9 | 42.8 |
-| 550  | Resnet50-FPN | SL1  |       SPM + Distance Cluster-NMS       | 27.5 | 31.3 | 33.3 | 48.2 | 28.7 | 29.9 | 42.9 |
-| 550  | Resnet50-FPN | SL1  | SPM + Distance + Weighted Cluster-NMS  | 26.7 | 34.0 | 36.6 | 49.9 | 30.5 | 32.0 | 44.3 |
+| 550  | Resnet50-FPN | SL1  |       SPM + Distance Cluster-NMS       | 35.2 | 31.3 | 33.3 | 48.2 | 28.7 | 29.9 | 42.9 |
+| 550  | Resnet50-FPN | SL1  | SPM + Distance + Weighted Cluster-NMS  | 34.2 | 31.8 | 33.9 | 48.3 | 28.8 | 29.9 | 43.0 |
 
 The following table is evaluated by using their pretrained weighted of YOLACT. ([yolact_base_54_800000.pth](https://drive.google.com/file/d/1UYy3dMapbH1BnmtZU4WH1zbYgOzzHHf_/view?usp=sharing))
 
