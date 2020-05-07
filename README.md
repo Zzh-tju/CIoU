@@ -7,7 +7,7 @@ This is the code for our papers:
  - [Enhancing Geometric Factors into Model Learning and Inference for Object Detection and Instance Segmentation](https://arxiv.org/)
 
 ```
-@inproceedings{zheng2020distance,
+@Inproceedings{zheng2020distance,
   author    = {Zhaohui Zheng, Ping Wang, Wei Liu, Jinze Li, Rongguang Ye, Dongwei Ren},
   title     = {Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression},
   booktitle = {The AAAI Conference on Artificial Intelligence (AAAI)},
