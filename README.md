@@ -79,7 +79,7 @@ In order to use YOLACT++, make sure you compile the DCNv2 code.
 
  - Clone this repository and enter it:
    ```Shell
-   git clone https://github.com/dbolya/yolact.git
+   git clone https://github.com/Zzh-tju/CIoU.git
    cd yolact
    ```
  - Set up the environment using one of the following methods:
