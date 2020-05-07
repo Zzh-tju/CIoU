@@ -62,7 +62,15 @@ The details of implementation and comparison can be respectively found in the fo
 
 Please take a look at `ciou` function of [layers/modules/multibox_loss.py](layers/modules/multibox_loss.py) for our CIoU loss implementation in PyTorch.
 
-And [layers/functions/detection.py](layers/functions/detection.py) for our Cluster-NMS implementation in PyTorch.
+Currently, NMS surports two modes: (See [eval.py](eval.py))
+
+1. Cross-class mode, which ignores classes. (`cross_class_nms=True`, faster than per-class mode but with a slight performance drop.)
+
+2. Per-class mode. (`cross_class_nms=False`)
+
+Currently, NMS supports `fast_nms`, `cluster_nms`, `cluster_diounms`, `spm`, `spm_dist`, `spm_dist_weighted`. 
+
+See [layers/functions/detection.py](layers/functions/detection.py) for our Cluster-NMS implementation in PyTorch.
 
 In order to use YOLACT++, make sure you compile the DCNv2 code. (See [Installation](https://github.com/Zzh-tju/CIoU#installation))
 
