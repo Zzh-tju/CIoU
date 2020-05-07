@@ -194,6 +194,11 @@ The following table is evaluated by using their pretrained weighted of YOLACT++.
 #### Note:
  - Things we did but did not appear in the paper: SPM + Distance + Weighted Cluster-NMS. Here the box coordinate weighted average is only performed in `IoU> 0.8`. (We searched that `IoU>0.5` is not good for YOLACT and `IoU>0.9` is almost same to `SPM + Distance Cluster-NMS`.)
  - The Original NMS impremented by YOLACT is faster than ours, because they firstly use a score threshold (0.05) to get the set of candidate boxes, then do NMS will be faster (taking YOLACT ResNet101-FPN as example, 22 ~ 23 FPS with a slight performance drop). In order to get the same result with our Cluster-NMS, we modify the process of Original NMS.
+ 
+ - Note that Torchvision NMS has the fastest speed, that is owing to CUDA imprementation and engineering accelerations (like upper triangular IoU matrix only). However, our Cluster-NMS requires less iterations for NMS and can also be further accelerated by adopting engineering tricks.
+
+ - Currently, Torchvision NMS use IoU as criterion, not DIoU. However, if we directly replace IoU with DIoU in Original NMS, it will costs much more time due to the sequence operation. Now, Cluster-DIoU-NMS will significantly speed up DIoU-NMS and obtain exactly the same result.
+
  - Torchvision NMS is a function in Torchvision>=0.3, and our Cluster-NMS can be applied to any projects that use low version of Torchvision and other deep learning frameworks as long as it can do matrix operations. **No other import, no need to compile, less iteration, fully GPU-accelerated and better performance**.
 ## Images
 ```Shell
