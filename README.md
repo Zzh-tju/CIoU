@@ -14,12 +14,6 @@ This is the code for our papers:
    year      = {2020},
 }
 
-@inproceedings{zheng2020distance,
-  author    = {Zhaohui Zheng, Ping Wang, Wei Liu, Jinze Li, Rongguang Ye, Dongwei Ren},
-  title     = {Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression},
-  booktitle = {The AAAI Conference on Artificial Intelligence (AAAI)},
-   year      = {2020},
-}
 @Article{zheng2020ciou,
   author    = {Zhaohui Zheng, Ping Wang, Dongwei Ren, Wei Liu, Rongguang Ye, Qinghua Hu, Wangmeng Zuo},
   title={Enhancing Geometric Factors in Model Learning and Inference for Object Detection and Instance Segmentation},
