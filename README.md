@@ -192,7 +192,8 @@ The following table is evaluated by using their pretrained weighted of YOLACT++.
 | 550  | Resnet101-FPN | SL1  |       SPM + Distance Cluster-NMS       |  22.0  |  36.9  |  40.2  |**53.0**|  34.9  |  37.5  |**46.3**|
 | 550  | Resnet101-FPN | SL1  | SPM + Distance + Weighted Cluster-NMS  |  21.7  |**37.4**|**40.6**|  52.5  |**35.0**|**37.6**|**46.3**|
 #### Note:
- - Things we did but did not appear in the paper: SPM + Distance + Weighted Cluster-NMS. Here the box coordinate weighted average is only performed in `IoU> 0.8`. (We searched that `IoU>0.5` is not good for YOLACT and `IoU>0.9` is almost same to `SPM + Distance Cluster-NMS`.)
+ - Things we did but did not appear in the paper: SPM + Distance + Weighted Cluster-NMS. Here the box coordinate weighted average is only performed in `IoU> 0.8`. We searched that `IoU>0.5` is not good for YOLACT and `IoU>0.9` is almost same to `SPM + Distance Cluster-NMS`. (Refer to [CAD](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8265304) for the details of Weighted-NMS.)
+ 
  - The Original NMS impremented by YOLACT is faster than ours, because they firstly use a score threshold (0.05) to get the set of candidate boxes, then do NMS will be faster (taking YOLACT ResNet101-FPN as example, 22 ~ 23 FPS with a slight performance drop). In order to get the same result with our Cluster-NMS, we modify the process of Original NMS.
  
  - Note that Torchvision NMS has the fastest speed, that is owing to CUDA imprementation and engineering accelerations (like upper triangular IoU matrix only). However, our Cluster-NMS requires less iterations for NMS and can also be further accelerated by adopting engineering tricks.
