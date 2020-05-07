@@ -4,7 +4,7 @@
 
 This is the code for our papers:
  - [Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression](https://arxiv.org/abs/1911.08287)
- - [Enhancing Geometric Factors into Model Learning and Inference for Object Detection and Instance Segmentation](https://arxiv.org/abs/1904.02689)
+ - [Enhancing Geometric Factors into Model Learning and Inference for Object Detection and Instance Segmentation](https://arxiv.org/)
 
 ```
 @inproceedings{zheng2020distance,
@@ -13,7 +13,24 @@ This is the code for our papers:
   booktitle = {The AAAI Conference on Artificial Intelligence (AAAI)},
    year      = {2020},
 }
+
+@inproceedings{zheng2020distance,
+  author    = {Zhaohui Zheng, Ping Wang, Wei Liu, Jinze Li, Rongguang Ye, Dongwei Ren},
+  title     = {Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression},
+  booktitle = {The AAAI Conference on Artificial Intelligence (AAAI)},
+   year      = {2020},
+}
+@Article{zheng2020ciou,
+  author    = {Zhaohui Zheng, Ping Wang, Dongwei Ren, Wei Liu, Rongguang Ye, Qinghua Hu, Wangmeng Zuo},
+  title={Enhancing Geometric Factors in Model Learning and Inference for Object Detection and Instance Segmentation},
+  journal="arXiv",
+  year={2020}
+}
 ```
+
+## Introduction
+
+In this [paper](https://arxiv.org/), we propose Complete-IoU (CIoU) loss and Cluster-NMS for enhancing geometric factors in both bounding box regression and Non-Maximum Suppression (NMS), leading to notable gains of average precision (AP) and average recall (AR), without the sacrifice of inference efficiency. In particular, we consider three geometric factors, i.e., overlap area, normalized central point distance and aspect ratio, which are crucial for measuring bounding box regression in object detection and instance segmentation. The three geometric factors are then incorporated into CIoU loss for better distinguishing difficult regression cases. The training of deep models using CIoU loss results in consistent AP and AR improvements in comparison to widely adopted Ln-norm loss and IoU-based loss. Furthermore, we propose Cluster-NMS, where NMS during inference is done by implicitly clustering detected boxes and usually requires less iterations. Cluster-NMS is very efficient due to its pure GPU implementation, and geometric factors can be incorporated to improve both AP and AR. In the experiments, CIoU loss and Cluster-NMS have been applied to state-of-the-art instance segmentation (e.g., YOLACT), and object detection (e.g., YOLO v3, SSD and Faster R-CNN) models.
 
 ## Getting Started
 
@@ -235,25 +252,3 @@ YOLACT now supports multiple GPUs seamlessly during training:
 ## Acknowledgments
 
 Thank you to [Daniel Bolya](https://github.com/dbolya/) for his fork of [YOLACT & YOLACT++](https://github.com/dbolya/yolact), which is an exellent work for real-time instance segmentation.
-
-For YOLACT, please cite
-```
-@inproceedings{yolact-iccv2019,
-  author    = {Daniel Bolya and Chong Zhou and Fanyi Xiao and Yong Jae Lee},
-  title     = {YOLACT: {Real-time} Instance Segmentation},
-  booktitle = {ICCV},
-  year      = {2019},
-}
-```
-
-For YOLACT++, please cite
-```
-@misc{yolact-plus-arxiv2019,
-  title         = {YOLACT++: Better Real-time Instance Segmentation},
-  author        = {Daniel Bolya and Chong Zhou and Fanyi Xiao and Yong Jae Lee},
-  year          = {2019},
-  eprint        = {1912.06218},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CV}
-}
-```
