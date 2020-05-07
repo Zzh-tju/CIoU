@@ -73,9 +73,10 @@ Currently, NMS supports `fast_nms`, `cluster_nms`, `cluster_diounms`, `spm`, `sp
 
 See [layers/functions/detection.py](layers/functions/detection.py) for our Cluster-NMS implementation in PyTorch.
 
-In order to use YOLACT++, make sure you compile the DCNv2 code. (See [Installation](https://github.com/Zzh-tju/CIoU#installation))
-
 # Installation
+
+In order to use YOLACT++, make sure you compile the DCNv2 code.
+
  - Clone this repository and enter it:
    ```Shell
    git clone https://github.com/dbolya/yolact.git
