@@ -185,9 +185,9 @@ The following table is evaluated by using their pretrained weight of YOLACT++. (
 #### Note:
  - Things we did but did not appear in the paper: SPM + Distance + Weighted Cluster-NMS. Here the box coordinate weighted average is only performed in `IoU> 0.8`. We searched that `IoU>0.5` is not good for YOLACT and `IoU>0.9` is almost same to `SPM + Distance Cluster-NMS`. (Refer to [CAD](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8265304) for the details of Weighted-NMS.)
  
- - The Original NMS impremented by YOLACT is faster than ours, because they firstly use a score threshold (0.05) to get the set of candidate boxes, then do NMS will be faster (taking YOLACT ResNet101-FPN as example, 22 ~ 23 FPS with a slight performance drop). In order to get the same result with our Cluster-NMS, we modify the process of Original NMS.
+ - The Original NMS implemented by YOLACT is faster than ours, because they firstly use a score threshold (0.05) to get the set of candidate boxes, then do NMS will be faster (taking YOLACT ResNet101-FPN as example, 22 ~ 23 FPS with a slight performance drop). In order to get the same result with our Cluster-NMS, we modify the process of Original NMS.
  
- - Note that Torchvision NMS has the fastest speed, that is owing to CUDA imprementation and engineering accelerations (like upper triangular IoU matrix only). However, our Cluster-NMS requires less iterations for NMS and can also be further accelerated by adopting engineering tricks.
+ - Note that Torchvision NMS has the fastest speed, that is owing to CUDA implementation and engineering accelerations (like upper triangular IoU matrix only). However, our Cluster-NMS requires less iterations for NMS and can also be further accelerated by adopting engineering tricks.
 
  - Currently, Torchvision NMS use IoU as criterion, not DIoU. However, if we directly replace IoU with DIoU in Original NMS, it will costs much more time due to the sequence operation. Now, Cluster-DIoU-NMS will significantly speed up DIoU-NMS and obtain exactly the same result.
 
@@ -195,7 +195,10 @@ The following table is evaluated by using their pretrained weight of YOLACT++. (
 ## Images
 ```Shell
 # Display qualitative results on the specified image.
-python eval.py --trained_model=weights/yolact_base_54_800000.pth --score_threshold=0.15 --top_k=15 --image=my_image.png
+python eval.py --trained_model=weights/yolact_base_54_800000.pth --score_threshold=0.15 --top_k=15 --ima
+
+
+ge=my_image.png
 
 # Process an image and save it to another file.
 python eval.py --trained_model=weights/yolact_base_54_800000.pth --score_threshold=0.15 --top_k=15 --image=input_image.png:output_image.png
