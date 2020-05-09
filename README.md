@@ -150,7 +150,7 @@ python eval.py --trained_model=weights/yolact_base_54_800000.pth --benchmark
 | 550  | Resnet101-FPN | CIoU  |       SPM + Distance Cluster-NMS       |  27.1  |  33.2  |  35.2  |**49.2**|  30.2  |**31.7**|**43.8**|
 | 550  | Resnet101-FPN | CIoU  | SPM + Distance + Weighted Cluster-NMS  |  26.5  |**33.4**|**35.5**|  49.1  |**30.3**|  31.6  |**43.8**|
 
-The following table is evaluated by using their pretrained weighted of YOLACT. ([yolact_resnet50_54_800000.pth](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/EUVpxoSXaqNIlssoLKOEoCcB1m0RpzGq_Khp5n1VX3zcUw))
+The following table is evaluated by using their pretrained weight of YOLACT. ([yolact_resnet50_54_800000.pth](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/EUVpxoSXaqNIlssoLKOEoCcB1m0RpzGq_Khp5n1VX3zcUw))
 
 | Image Size | Backbone  | Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
 |:----:|:-------------:|:-------:|:-----------------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
@@ -161,7 +161,7 @@ The following table is evaluated by using their pretrained weighted of YOLACT. (
 | 550  | Resnet50-FPN | SL1  |       SPM + Distance Cluster-NMS       |  35.2  |  31.3  |  33.3  |  48.2  |  28.7  |**29.9**|  42.9  |
 | 550  | Resnet50-FPN | SL1  | SPM + Distance + Weighted Cluster-NMS  |  34.2  |**31.8**|**33.9**|**48.3**|**28.8**|**29.9**|**43.0**|
 
-The following table is evaluated by using their pretrained weighted of YOLACT. ([yolact_base_54_800000.pth](https://drive.google.com/file/d/1UYy3dMapbH1BnmtZU4WH1zbYgOzzHHf_/view?usp=sharing))
+The following table is evaluated by using their pretrained weight of YOLACT. ([yolact_base_54_800000.pth](https://drive.google.com/file/d/1UYy3dMapbH1BnmtZU4WH1zbYgOzzHHf_/view?usp=sharing))
 
 | Image Size | Backbone  | Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
 |:----:|:-------------:|:-------:|:-----------------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
@@ -172,7 +172,7 @@ The following table is evaluated by using their pretrained weighted of YOLACT. (
 | 550  | Resnet101-FPN | SL1  |       SPM + Distance Cluster-NMS       |  27.5  |  33.5  |  35.9  |**50.2**|  30.4  |  32.0  |**44.3**|
 | 550  | Resnet101-FPN | SL1  | SPM + Distance + Weighted Cluster-NMS  |  26.7  |**34.0**|**36.6**|  49.9  |**30.5**|  32.0  |**44.3**|
 
-The following table is evaluated by using their pretrained weighted of YOLACT++. ([yolact_plus_base_54_800000.pth](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/EVQ62sF0SrJPrl_68onyHF8BpG7c05A8PavV4a849sZgEA))
+The following table is evaluated by using their pretrained weight of YOLACT++. ([yolact_plus_base_54_800000.pth](https://ucdavis365-my.sharepoint.com/:u:/g/personal/yongjaelee_ucdavis_edu/EVQ62sF0SrJPrl_68onyHF8BpG7c05A8PavV4a849sZgEA))
 
 | Image Size | Backbone  | Loss  | NMS  | FPS  | box AP | box AP75 | box AR100 | mask AP | mask AP75 | mask AR100 |
 |:----:|:-------------:|:-------:|:-----------------------------------:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
