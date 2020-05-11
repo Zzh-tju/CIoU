@@ -53,7 +53,7 @@ def ciou(bboxes1, bboxes2):
     with torch.no_grad():
         S = (iou>0.5)
         alpha= S*v/(1-iou+v)
-    cious = iou - u + alpha * v
+    cious = iou - u - alpha * v
     cious = torch.clamp(cious,min=-1.0,max = 1.0)
     if exchange:
         cious = cious.T
