@@ -26,7 +26,7 @@ This is the code for our papers:
 
 ## Description of Cluster-NMS and Its Usage
 
-An example diagram of our Cluster-NMS, where X denotes IoU matrix which is calculated by `X=jaccard(boxes,boxes).triu_(diagonal=1)` after sorted by score descending.
+An example diagram of our Cluster-NMS, where X denotes IoU matrix which is calculated by `X=jaccard(boxes,boxes).triu_(diagonal=1) > nms_thresh` after sorted by score descending.
 
 <img src="cluster-nms01.png" width="1150px"/>
 <img src="cluster-nms02.png" width="1150px"/>
