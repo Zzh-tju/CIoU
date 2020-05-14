@@ -26,8 +26,9 @@ This is the code for our papers:
 
 In this [paper](https://arxiv.org/abs/2005.03572), we propose Complete-IoU (CIoU) loss and Cluster-NMS for enhancing geometric factors in both bounding box regression and Non-Maximum Suppression (NMS), leading to notable gains of average precision (AP) and average recall (AR), without the sacrifice of inference efficiency. In particular, we consider three geometric factors, i.e., overlap area, normalized central point distance and aspect ratio, which are crucial for measuring bounding box regression in object detection and instance segmentation. The three geometric factors are then incorporated into CIoU loss for better distinguishing difficult regression cases. The training of deep models using CIoU loss results in consistent AP and AR improvements in comparison to widely adopted Ln-norm loss and IoU-based loss. Furthermore, we propose Cluster-NMS, where NMS during inference is done by implicitly clustering detected boxes and usually requires less iterations. Cluster-NMS is very efficient due to its pure GPU implementation, and geometric factors can be incorporated to improve both AP and AR. In the experiments, CIoU loss and Cluster-NMS have been applied to state-of-the-art instance segmentation (e.g., YOLACT), and object detection (e.g., YOLO v3, SSD and Faster R-CNN) models.
 
-<img src="cluster-nms1.png" width="1100px"/>
-<img src="cluster-nms2.png" width="1100px"/>
+<img src="cluster-nms1.png" width="1150px"/>
+<img src="cluster-nms2.png" width="1150px"/>
+
 ## Getting Started
 
 ### 1) New released! CIoU and Cluster-NMS
