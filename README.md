@@ -1,6 +1,6 @@
 <img src="CIoU.png" width="800px"/>
 
-## Complete-IoU Loss and Cluster-NMS for improving Object Detection and Instance Segmentation. 
+## Complete-IoU Loss and Cluster-NMS for improving Object Detection and Instance Segmentation. (This repository is for YOLACT++.)
 
 This is the code for our papers:
  - [Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression](https://arxiv.org/abs/1911.08287)
