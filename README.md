@@ -1,6 +1,6 @@
 <img src="CIoU.png" width="800px"/>
 
-## Complete-IoU Loss and Cluster-NMS for improving Object Detection and Instance Segmentation. 
+## Complete-IoU Loss and Cluster-NMS for Improving Object Detection and Instance Segmentation. 
 
 ### This repo is based on YOLACT++.
 
