@@ -51,7 +51,7 @@ def ciou(bboxes1, bboxes2):
     iou = inter_area / union
     v = (4 / (math.pi ** 2)) * torch.pow((torch.atan(w2 / h2) - torch.atan(w1 / h1)), 2)
     with torch.no_grad():
-        S = (iou>0.5)
+        S = (iou>0.5).float()
         alpha= S*v/(1-iou+v)
     cious = iou - u - alpha * v
     cious = torch.clamp(cious,min=-1.0,max = 1.0)
