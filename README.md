@@ -26,8 +26,16 @@ This is the code for our papers:
 
 In this [paper](https://arxiv.org/abs/2005.03572), we propose Complete-IoU (CIoU) loss and Cluster-NMS for enhancing geometric factors in both bounding box regression and Non-Maximum Suppression (NMS), leading to notable gains of average precision (AP) and average recall (AR), without the sacrifice of inference efficiency. In particular, we consider three geometric factors, i.e., overlap area, normalized central point distance and aspect ratio, which are crucial for measuring bounding box regression in object detection and instance segmentation. The three geometric factors are then incorporated into CIoU loss for better distinguishing difficult regression cases. The training of deep models using CIoU loss results in consistent AP and AR improvements in comparison to widely adopted Ln-norm loss and IoU-based loss. Furthermore, we propose Cluster-NMS, where NMS during inference is done by implicitly clustering detected boxes and usually requires less iterations. Cluster-NMS is very efficient due to its pure GPU implementation, and geometric factors can be incorporated to improve both AP and AR. In the experiments, CIoU loss and Cluster-NMS have been applied to state-of-the-art instance segmentation (e.g., YOLACT), and object detection (e.g., YOLO v3, SSD and Faster R-CNN) models.
 
+An example diagram of our Cluster-NMS, where X denotes IoU matrix which is calculated by `X=jaccard(boxes,boxes).triu_(diagonal=1)`
+
 <img src="cluster-nms1.png" width="1150px"/>
 <img src="cluster-nms2.png" width="1150px"/>
+
+The inputs of NMS are `boxes` with size [n,4] and `scores` with size [80,n]. (take coco as example)
+
+There are two ways for NMS. One is that all classes have the same number of boxes. First, we use top k=200 to select the top 200 detections for every class. Then `boxes` will be [80,m,4], where m<=200. Do Cluster-NMS and keep the boxes with `scores>0.01`. Finally, return top 100 boxes across all classes.
+
+The other approach is that different classes have different numbers of boxes. First, we use a score threshold (e.g. 0.01) to filter out most low score detection boxes. It results in the number of remaining boxes in different classes may be different. Then put all the boxes together and sorted by score descending. (Note that the same box may appear more than once, because its scores of multiple classes are greater than the threshold 0.01.) Adding offset for all the `boxes` according to their class labels. (use `torch.arrange(0,80)`.) For example, since the coordinates (x1,y1,x2,y2) of all the boxes are on interval (0,1). By adding offset, if a box belongs to class 61, its coordinates will on interval (60,61). After that, the IoU of boxes belonging to different classes will be 0. (because they are treated as different clusters.) Do Cluster-NMS and return top 100 boxes across all classes.
 
 ## Getting Started
 
