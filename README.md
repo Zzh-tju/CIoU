@@ -26,8 +26,8 @@ This is the code for our papers:
 
 An example diagram of our Cluster-NMS, where X denotes IoU matrix which is calculated by `X=jaccard(boxes,boxes).triu_(diagonal=1)` after sorted by score descending.
 
-<img src="cluster-nms1.png" width="1150px"/>
-<img src="cluster-nms2.png" width="1150px"/>
+<img src="cluster-nms01.png" width="1150px"/>
+<img src="cluster-nms02.png" width="1150px"/>
 
 The inputs of NMS are `boxes` with size [n,4] and `scores` with size [80,n]. (take coco as example)
 
