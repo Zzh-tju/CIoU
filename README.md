@@ -204,7 +204,6 @@ The following table is evaluated by using their pretrained weight of YOLACT++. (
 
  - Torchvision NMS is a function in Torchvision>=0.3, and our Cluster-NMS can be applied to any projects that use low version of Torchvision and other deep learning frameworks as long as it can do matrix operations. **No other import, no need to compile, less iteration, fully GPU-accelerated and better performance**.
 
- - Softer-NMS (box voting) can also be combined with Cluster-NMS. It is similar to Weighted Cluster-NMS. 
 ## Images
 ```Shell
 # Display qualitative results on the specified image.
