@@ -45,7 +45,7 @@ The other approach is that different classes have different numbers of boxes. Fi
 
 2. YOLOv3-pytorch [https://github.com/Zzh-tju/ultralytics-YOLOv3-Cluster-NMS](https://github.com/Zzh-tju/ultralytics-YOLOv3-Cluster-NMS)
 
-3. YOLOv5 (support batch mode Cluster-NMS) [https://github.com/Zzh-tju/yolov5](https://github.com/Zzh-tju/yolov5)
+3. YOLOv5 (Support batch mode Cluster-NMS. It will speed up NMS when turning on test-time augmentation like multi-scale testing.) [https://github.com/Zzh-tju/yolov5](https://github.com/Zzh-tju/yolov5)
 
 4. SSD-pytorch [https://github.com/Zzh-tju/DIoU-SSD-pytorch](https://github.com/Zzh-tju/DIoU-SSD-pytorch)
 
