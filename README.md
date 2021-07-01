@@ -2,6 +2,8 @@
 
 ## Complete-IoU Loss and Cluster-NMS for Improving Object Detection and Instance Segmentation. 
 
+Our paper is accepted by **IEEE Transactions on Cybernetics (TCYB)**.
+
 ### This repo is based on YOLACT++.
 
 This is the code for our papers:
@@ -16,11 +18,11 @@ This is the code for our papers:
    year      = {2020},
 }
 
-@Article{zheng2020ciou,
+@Article{ciou-tcyb2021,
   author= {Zhaohui Zheng, Ping Wang, Dongwei Ren, Wei Liu, Rongguang Ye, Qinghua Hu, Wangmeng Zuo},
   title={Enhancing Geometric Factors in Model Learning and Inference for Object Detection and Instance Segmentation},
-  journal={arXiv:2005.03572},
-  year={2020}
+  journal={IEEE Transactions on Cybernetics},
+  year={2021}
 }
 ```
 
