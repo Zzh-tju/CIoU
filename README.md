@@ -18,7 +18,7 @@ This is the code for our papers:
   year      = {2020},
 }
 
-@Inproceedings{zheng2021ciou,
+@Article{zheng2021ciou,
   author    = {Zheng, Zhaohui and Wang, Ping and Ren, Dongwei and Liu, Wei and Ye, Rongguang and Hu, Qinghua and Zuo, Wangmeng},
   title     = {Enhancing Geometric Factors in Model Learning and Inference for Object Detection and Instance Segmentation},
   booktitle = {IEEE Transactions on Cybernetics},
