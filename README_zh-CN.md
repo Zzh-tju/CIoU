@@ -53,13 +53,11 @@ NMS有两种途径，各有各的特点。
 
 2. YOLOv3-pytorch [https://github.com/Zzh-tju/ultralytics-YOLOv3-Cluster-NMS](https://github.com/Zzh-tju/ultralytics-YOLOv3-Cluster-NMS)
 
-3. YOLOv5 (Support batch mode Cluster-NMS. It will speed up NMS when turning on test-time augmentation like multi-scale testing.) [https://github.com/Zzh-tju/yolov5](https://github.com/Zzh-tju/yolov5)
+3. YOLOv5 (支持批处理模式的Cluster-NMS。当使用测试阶段增强时，如多尺度测试，将大大加速NMS。) [https://github.com/Zzh-tju/yolov5](https://github.com/Zzh-tju/yolov5)
 
 4. SSD-pytorch [https://github.com/Zzh-tju/DIoU-SSD-pytorch](https://github.com/Zzh-tju/DIoU-SSD-pytorch)
 
 ### 2) DIoU 与 CIoU 纳入检测器
-DIoU and CIoU losses are incorporated into state-of-the-art detection algorithms, including YOLO v3, SSD and Faster R-CNN. 
-The details of implementation and comparison can be respectively found in the following links. 
 
 1. YOLO v3 [https://github.com/Zzh-tju/DIoU-darknet](https://github.com/Zzh-tju/DIoU-darknet)
 
