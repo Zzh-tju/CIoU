@@ -108,7 +108,7 @@ NMS有两种途径，各有各的特点。
    ```Shell
    sh data/scripts/COCO.sh
    ```
- - 如要测试在COCO `test-dev`上测试YOLACT, 需下载`test-dev`：
+ - 如想在COCO `test-dev`上测试YOLACT, 需下载`test-dev`：
    ```Shell
    sh data/scripts/COCO_test.sh
    ```
