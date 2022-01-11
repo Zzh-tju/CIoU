@@ -1,5 +1,7 @@
 <img src="CIoU.png" width="800px"/>
 
+### English | [简体中文](README_zh-CN.md)
+
 ## Complete-IoU Loss and Cluster-NMS for Improving Object Detection and Instance Segmentation. 
 
 Our paper is accepted by **IEEE Transactions on Cybernetics (TCYB)**.
