@@ -151,7 +151,7 @@ python eval.py --trained_model=weights/yolact_base_54_800000.pth --output_coco_j
 # 一般会使用0.15的分类score阈值。
 python eval.py --trained_model=weights/yolact_base_54_800000.pth --score_threshold=0.15 --top_k=15 --display
 ```
-## Cluster-NMS 评估
+## Cluster-NMS 速度评估
 ```
 python eval.py --trained_model=weights/yolact_base_54_800000.pth --benchmark
 ```
