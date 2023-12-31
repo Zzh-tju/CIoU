@@ -17,7 +17,8 @@ This is the code for our papers:
   author    = {Zheng, Zhaohui and Wang, Ping and Liu, Wei and Li, Jinze and Ye, Rongguang and Ren, Dongwei},
   title     = {Distance-IoU Loss: Faster and Better Learning for Bounding Box Regression},
   booktitle = {The AAAI Conference on Artificial Intelligence (AAAI)},
-  year      = {2020},
+  pages     = {12993--13000},
+  year      = {2020}
 }
 
 @Article{zheng2021ciou,
