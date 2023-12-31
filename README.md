@@ -23,8 +23,12 @@ This is the code for our papers:
 @Article{zheng2021ciou,
   author    = {Zheng, Zhaohui and Wang, Ping and Ren, Dongwei and Liu, Wei and Ye, Rongguang and Hu, Qinghua and Zuo, Wangmeng},
   title     = {Enhancing Geometric Factors in Model Learning and Inference for Object Detection and Instance Segmentation},
-  booktitle = {IEEE Transactions on Cybernetics},
+  journal   = {IEEE Transactions on cybernetics},
+  volume    = {52},
+  number    = {8},
+  pages     = {8574--8586},
   year      = {2021},
+  publisher = {IEEE}
 }
 ```
 
